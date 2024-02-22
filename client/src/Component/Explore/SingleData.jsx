@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { CiLocationOn } from "react-icons/ci";
 import { CiCalendarDate } from "react-icons/ci";
 
@@ -51,13 +51,13 @@ export const SingleData = () => {
             </h1>
           </h1>
           <div className="flex justify-center">
-          <button className="flex justify-center items-center border-[2px] w-[200px] rounded-md h-[40px] border-white text-white font-bold bg-gradient-to-r to-yellow-300 from-orange-500">Book trial at 50</button>
+          <Link to='/book'><button className="flex justify-center items-center border-[2px] w-[200px] rounded-md h-[40px] border-white text-white font-bold bg-gradient-to-r to-yellow-300 from-orange-500">Book trial at 50</button></Link>
           </div>
           <div className="flex justify-center">
-          <button className="border-[2px] w-[200px] rounded-md h-[40px] border-white text-white font-bold bg-gradient-to-r to-yellow-300 from-orange-500">Book trial at 1950</button>
+         <Link to='/book'><button className="border-[2px] w-[200px] rounded-md h-[40px] border-white text-white font-bold bg-gradient-to-r to-yellow-300 from-orange-500">Book trial at 1950</button></Link> 
           </div>
           <div className="flex justify-center mb-2">
-          <button className=" p-2 border-[2px] w-[200px] rounded-md h-[40px] border-white text-white font-bold bg-gradient-to-r to-yellow-300 from-orange-500">join 3 Months at 15% off</button>
+          <Link to='/book'><button className=" p-2 border-[2px] w-[200px] rounded-md h-[40px] border-white text-white font-bold bg-gradient-to-r to-yellow-300 from-orange-500">join 3 Months at 15% off</button></Link>
           </div>
         </div>
       </div>
