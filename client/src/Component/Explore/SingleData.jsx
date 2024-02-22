@@ -51,13 +51,13 @@ export const SingleData = () => {
             </h1>
           </h1>
           <div className="flex justify-center">
-          <Link to='/book'><button className="flex justify-center items-center border-[2px] w-[200px] rounded-md h-[40px] border-white text-white font-bold bg-gradient-to-r to-yellow-300 from-orange-500">Book trial at 50</button></Link>
+          <Link to={`/book/${id}`}><button className="flex justify-center items-center border-[2px] w-[200px] rounded-md h-[40px] border-white text-white font-bold bg-gradient-to-r to-yellow-300 from-orange-500">Book trial at 50</button></Link>
           </div>
           <div className="flex justify-center">
-         <Link to='/book'><button className="border-[2px] w-[200px] rounded-md h-[40px] border-white text-white font-bold bg-gradient-to-r to-yellow-300 from-orange-500">Book trial at 1950</button></Link> 
+         <Link to={`/book/${id}`}><button className="border-[2px] w-[200px] rounded-md h-[40px] border-white text-white font-bold bg-gradient-to-r to-yellow-300 from-orange-500">Book trial at 1950</button></Link> 
           </div>
           <div className="flex justify-center mb-2">
-          <Link to='/book'><button className=" p-2 border-[2px] w-[200px] rounded-md h-[40px] border-white text-white font-bold bg-gradient-to-r to-yellow-300 from-orange-500">join 3 Months at 15% off</button></Link>
+          <Link to={`/book/${id}`}><button className=" p-2 border-[2px] w-[200px] rounded-md h-[40px] border-white text-white font-bold bg-gradient-to-r to-yellow-300 from-orange-500">join 3 Months at 15% off</button></Link>
           </div>
         </div>
       </div>

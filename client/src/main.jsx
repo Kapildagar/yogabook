@@ -31,7 +31,7 @@ const router=createBrowserRouter([
       path:"/:id",
       element:<SingleData/>
     },{
-      path:'/book',
+      path:'/book/:id',
       element:<Bookyoga/>
     }
   ]

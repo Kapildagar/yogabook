@@ -55,7 +55,22 @@ const userSchema = new mongoose.Schema({
     },
     accessToken: {
         type: String
-    }
+    },
+    Book:[
+        {
+            id:{
+                type:Number
+            },
+            date:{
+                type:Number
+            },
+            Time:{
+               type:Number
+            }
+        }
+    ]
+
+    
 }, {
     timestamps: true
 })

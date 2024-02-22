@@ -142,7 +142,7 @@ const logoutUser = async (req, res) => {
                 new: true
             })
             res.status(200).json({
-                success:true
+                success:"true"
             })
     }
     catch (err) {
@@ -150,9 +150,25 @@ const logoutUser = async (req, res) => {
     }
 }
 
+const BookClass=async(req,res,next)=>{
+    try{
+      const id=req.user._id;
+      console.log(req.body);
+      const data=req.body;
+       const newuser=await User.findById(id);
+       console.log(newuser);
+        newuser.Book.push(data);
+       const userdata= await newuser.save({validateBeforeSave:false});
+       console.log(userdata)
+    }
+    catch(err){
+        console.log(err);
+    }
+}
 
 
-export { registerUser, Loginuser,logoutUser }
+
+export { registerUser, Loginuser,logoutUser,BookClass }
 
 
 
