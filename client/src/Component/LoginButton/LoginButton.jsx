@@ -3,6 +3,7 @@ import { counry } from "../../../public/Countrycode"
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../Redux/ReduxSlice/UserSlice";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -13,6 +14,8 @@ export const LoginButton = ({ setsignupfun }) => {
   const [Code, setCode] = useState(counry[0].dial_code);
   const [number, setnumber] = useState(Code);
    const[password,setpassword]=useState();
+  const navigate=useNavigate();
+
   const handleClick = (e) => {
     setCode(e.target.value);
     setnumber(e.target.value)
@@ -26,6 +29,7 @@ export const LoginButton = ({ setsignupfun }) => {
          console.log(res)
          if(res.data.success){
                 dispatch(setUser(res.data.newUser));
+                navigate("/")
          }
 
   }

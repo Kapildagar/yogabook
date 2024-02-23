@@ -13,6 +13,8 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import { store, persistor } from './Redux/Store.js';
 import Bookyoga from './Component/Bookyoga/Bookyoga.jsx';
+import Protected from './Component/Protected/Protected.jsx';
+import { Login } from './Component/Login/Login.jsx';
 
 const router=createBrowserRouter([
   {
@@ -32,7 +34,11 @@ const router=createBrowserRouter([
       element:<SingleData/>
     },{
       path:'/book/:id',
-      element:<Bookyoga/>
+      element:<Protected><Bookyoga/></Protected>
+    },
+    {
+      path:"/login",
+      element:<Login/>
     }
   ]
   }
