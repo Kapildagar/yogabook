@@ -56,19 +56,14 @@ const userSchema = new mongoose.Schema({
     accessToken: {
         type: String
     },
-    Book:[
-        {
-            id:{
-                type:Number
-            },
-            date:{
-                type:Number
-            },
-            Time:{
-               type:Number
-            }
-        }
-    ]
+    // Book:[
+    //     {
+    //        id:{
+    //         type:mongoose.Schema.Types.ObjectId,
+    //         ref:Book
+    //        }
+    //     }
+    // ]
 
     
 }, {

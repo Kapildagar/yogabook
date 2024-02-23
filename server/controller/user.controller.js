@@ -25,7 +25,7 @@
 
 
 import User from '../models/User.models.js';
-
+import Book from '../models/Book.models.js';
 
 
 
@@ -155,20 +155,36 @@ const BookClass=async(req,res,next)=>{
       const id=req.user._id;
       console.log(req.body);
       const data=req.body;
-       const newuser=await User.findById(id);
+       const newuser=await Book.create({
+        id:req.body.id,
+        time:req.body.time,
+        date:req.body.date,
+        userid:req.user._id
+       });
        console.log(newuser);
-        newuser.Book.push(data);
-       const userdata= await newuser.save({validateBeforeSave:false});
-       console.log(userdata)
+       res.status(200).json({
+        sucess:"true",
+        message:"Yoga class sucessfully booked"
+       })
     }
     catch(err){
         console.log(err);
     }
 }
 
+// const getAll=async(req,res,next)=>{
+//     try{
+//           const userid=req.body._id;
+//           const datas=await Book.find().populate("userid");
+//           console.log(datas);
+//     }
+//     catch(err){
+//         console.log(err)
+//     }
+// }
 
 
-export { registerUser, Loginuser,logoutUser,BookClass }
+export { registerUser, Loginuser,logoutUser,BookClass,getAll }
 
 
 
