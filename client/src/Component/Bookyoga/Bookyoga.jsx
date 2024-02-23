@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react"
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 const Bookyoga = () => {
@@ -19,6 +19,7 @@ const Bookyoga = () => {
     const [date,setdate]=useState(todaydate.getFullYear()+"-"+month+"-"+tDate);
     const [time,settime]=useState("00:00");
     const param=useParams();
+    const navigate=useNavigate();
     console.log(param)
     const id=param.id;
     console.log(id)
@@ -28,6 +29,9 @@ const Bookyoga = () => {
             const res=await axios.post("http://localhost:3000/api/v1/user/bookclass",{id,date,time},{
                 withCredentials:true
             })
+            if(res.data.sucess){
+              navigate('/');
+            }
             console.log(res);
     }
     
