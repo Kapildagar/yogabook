@@ -184,7 +184,7 @@ const BookClass=async(req,res,next)=>{
 // }
 
 
-export { registerUser, Loginuser,logoutUser,BookClass,getAll }
+export { registerUser, Loginuser,logoutUser,BookClass }
 
 
 
